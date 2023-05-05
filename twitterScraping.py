@@ -55,18 +55,18 @@ def main_app(usrn, pss, target):
             following_usernames_manipulated.append(following_usernames[i])
     cnt = len(following_usernames_manipulated)
     # print(following_usernames_manipulated)
-    ls = [[] for i in range(cnt)]
+    ls = [[] for i in range(cnt + 10)]
     # print(ls)
 
-    for i in range(cnt-5):
+    for i in range(len(following_usernames_manipulated)):
         ls[i].append(following_usernames_manipulated[i])
     following_names = [flwng.text for flwng in browser.find_elements(By.XPATH, "//div[@class='css-901oao r-1awozwy r-18jsvk2 r-6koalj r-37j5jr r-a023e6 r-b88u0q r-rjixqe r-bcqeeo r-1udh08x r-3s2u2q r-qvutc0']//span[@class='css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0']")]
     # print(len(following_names))
     # print(cnt)
-    for i in range(cnt-5):
+    for i in range(len(following_names)):
         ls[i].append(following_names[i])
     following_bio = [flwing.text for flwing in browser.find_elements(By.XPATH, "//div[@class='css-901oao r-18jsvk2 r-37j5jr r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-1h8ys4a r-1jeg54m r-qvutc0']//span[@class='css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0']")]
-    for i in range(cnt-5):
+    for i in range(len(following_bio)):
         ls[i].append(following_bio[i])
 
 
